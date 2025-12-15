@@ -34,17 +34,46 @@ public class StudentService {
 
     }
 
-    public void upateStudent(Student stu) {
+    public String upateStudent(Student stu) {
 
         int index=0;
+        boolean found=false;
         for(int i=0;i<s.size();i++){
             if(s.get(i).getRollno()== stu.getRollno()){
                 index=i;
+                found = true;
                 break;
             }
         }
-        s.set(index,stu);
+         if(found) {s.set(index,stu);
+         return "updated sucesfully";}
+         else {
+             return "No such student found";
 
+         }
+
+
+
+    }
+
+    public String deleteStudent(int rollno) {
+        int index=0;
+        boolean found=false;
+        for(int i=0;i<s.size();i++){
+            if(s.get(i).getRollno()== rollno){
+                index=i;
+                found = true;
+                break;
+            }
+        }
+        if(found){
+            s.remove(index);
+            return "Deleted Succesfully";
+
+        }
+        else{
+            return "No Such object";
+        }
 
     }
 }

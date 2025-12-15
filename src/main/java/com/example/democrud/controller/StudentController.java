@@ -5,6 +5,7 @@ import com.example.democrud.service.StudentService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.service.annotation.DeleteExchange;
 
 import java.util.List;
 
@@ -30,7 +31,12 @@ public class StudentController {
     }
     @PutMapping("Students")
     public String updateStudents(@RequestBody Student stu){
-        sts.upateStudent(stu);
-        return "UpdateSuccesfully";
+         return sts.upateStudent(stu);
+
     }
+    @DeleteMapping("Students/{rollno}")
+    public String deleteStudent(@PathVariable int rollno){
+        return sts.deleteStudent(rollno);
+    }
+
 }
