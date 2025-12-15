@@ -2,11 +2,9 @@ package com.example.democrud.controller;
 
 import com.example.democrud.model.Student;
 import com.example.democrud.service.StudentService;
-import lombok.extern.flogger.Flogger;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,5 +23,9 @@ public class StudentController {
     @GetMapping("/Students/{rollno}")
     public Student getStudentRollno(@PathVariable("rollno") int rollno){
         return sts.getStudentRollno(rollno) ;
+    }
+    @PostMapping("Students")
+    public String setStudents(@RequestBody Student stu){
+        return sts.setStudent(stu);
     }
 }

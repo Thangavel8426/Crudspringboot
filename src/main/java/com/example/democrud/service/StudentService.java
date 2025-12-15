@@ -9,7 +9,7 @@ import java.util.List;
 @Service
 
 public class StudentService {
-    List<Student> s= new ArrayList<>(Arrays.asList(new Student(2,"Deva","java"), new Student(3,"Danush","python")));
+    List<Student> s= new ArrayList<>(Arrays.asList(new Student(2,"Deva","java"), new Student(3,"Danush","python"),new Student(4,"Dhanvanth","mysql")));
 
 
     public List<Student> giveStudent() {
@@ -25,5 +25,12 @@ public class StudentService {
             }
         }
         return s.get(index);
+    }
+
+    public String setStudent(Student stu) {
+
+    s.add(stu);
+    return "succeess";
+
     }
 }
