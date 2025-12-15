@@ -33,4 +33,18 @@ public class StudentService {
     return "succeess";
 
     }
+
+    public void upateStudent(Student stu) {
+
+        int index=0;
+        for(int i=0;i<s.size();i++){
+            if(s.get(i).getRollno()== stu.getRollno()){
+                index=i;
+                break;
+            }
+        }
+        s.set(index,stu);
+
+
+    }
 }

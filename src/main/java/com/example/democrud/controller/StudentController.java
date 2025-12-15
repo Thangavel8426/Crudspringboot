@@ -28,4 +28,9 @@ public class StudentController {
     public String setStudents(@RequestBody Student stu){
         return sts.setStudent(stu);
     }
+    @PutMapping("Students")
+    public String updateStudents(@RequestBody Student stu){
+        sts.upateStudent(stu);
+        return "UpdateSuccesfully";
+    }
 }
