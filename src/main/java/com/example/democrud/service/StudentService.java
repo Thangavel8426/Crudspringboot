@@ -15,4 +15,15 @@ public class StudentService {
     public List<Student> giveStudent() {
         return s;
     }
+
+    public Student getStudentRollno(int rollno) {
+        int index=0;
+        for(int i=0;i<s.size();i++){
+            if(s.get(i).getRollno()==rollno){
+                index=i;
+                break;
+            }
+        }
+        return s.get(index);
+    }
 }
